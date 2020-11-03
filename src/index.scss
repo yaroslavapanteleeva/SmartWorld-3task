@@ -14,13 +14,19 @@ code {
     monospace;
 }
 
-.container-fluid {
+.hero {
   position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.text-red {
+  color: red;
 }
 
 .sidebar {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 56px;
   bottom: 0;
   left: 0;
   width: 300px;
@@ -44,6 +50,35 @@ code {
     width: 100%;
   }
 }
+
+.login {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  
+}
+
+.mark-link {
+  color: green;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: all 400ms ease-in-out;
+}
+
+.form-container {
+  padding: 60px;
+  margin: auto;
+  width: 100%;
+  max-width: 520px;
+  min-height: 500px;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
+}
+
 
 .note {
   display: flex;

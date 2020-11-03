@@ -1,5 +1,4 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import React from 'react'
 import { Form } from './Form';
 import { Notes } from './Notes';
 
@@ -8,7 +7,7 @@ export const Sidebar = () => {
 
     return (
 
-            <div className="bg-light sidebar">
+            <div className="sidebar">
                 <Notes notes={notes} />
                 <Form />
               
