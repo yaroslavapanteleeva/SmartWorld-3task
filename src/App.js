@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react'
+import {BrowserRouter, Route, Switch}  from 'react-router-dom'
 import fire from './config/fire';
+import { FirebaseState } from './context/farebase/FarebaseState'
 import Login from './pages/Login';
 import Todo  from './pages/Todo';
 
@@ -70,6 +72,7 @@ function App() {
       if (user) {
         clearInputs()
         setUser(user)
+        console.log(user.uid)
       } else {
         setUser("")
       }
@@ -82,9 +85,12 @@ function App() {
 
   return (
     
+     <FirebaseState>
+
+     
       <div className="App">
 
-        {(user) ? (
+         {/* {(user) ? (
           <Todo handleLogout={handleLogout} />
         ) : (
           <Login 
@@ -99,12 +105,13 @@ function App() {
             emailError={emailError}
             passwordError={passwordError}
           />
-        )}
-        
+        )}  */}
+         <Todo handleLogout={handleLogout} /> 
+
 
       </div>
-    
-    
+    </FirebaseState>
+   
   );
 }
 

@@ -1,12 +1,19 @@
 import React, {useState, useContext} from 'react';
+import { FirebaseContext } from '../context/farebase/firebaseContex'
 
 export const Form = () => {
     const [value, setValue] = useState('')
+    const firebase = useContext(FirebaseContext)
+
 
     const submitHandler = e => {
         e.preventDefault()
         if(value.trim()) {
-            console.log('Создана')
+            firebase.addNote(value.trim()).then(() => {
+                console.log('создана')
+            }).catch(() => {
+                console.log('Что-то не так', 'danger')  
+            })
             setValue('')
         } else {
             console.log('нет')

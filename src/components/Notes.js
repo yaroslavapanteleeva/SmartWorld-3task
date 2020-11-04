@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import {Link, NavLink}  from 'react-router-dom';
+import { Content } from './Content';
 
-
-export const Notes = ({notes}) => {
+export const Notes = ({notes, onRemove}) => {
 
    
-    
-    const clickNotes = e => {
-        e.preventDefault()
-        
-        
-    }
 
-    return (
-        <ul className="list-group">
-            {notes.map(note => (
-            
-                    <li 
-                        className="list-group-item note"
+        return (
+            <div className="list-group">
+                {notes.map(note => (
+                
+                    <NavLink
+                       
+                        className="list-group-item list-group-item-action"
                         key={note.id}
-                        onClick={clickNotes}
-                        
+                        to={note.id}
+                       
                     >
-                
                         <strong>{note.title}</strong>
-                        <button type="button" className="btn btn-outline-danger btn-sm">&times;</button>
-                    </li>
-                    
-                
-            ))} 
-        </ul>
-    )
+                      
+                        
+                        <button type="button" className="btn btn-outline-danger btn-sm" onClick={() => onRemove(note.id)}>&times;</button>
+                   
+                    </NavLink>
+  
+                ))} 
+            
+            </div>
+        )
+    
+  
+   
+       
+   
 
     
 }
