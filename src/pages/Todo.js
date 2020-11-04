@@ -21,13 +21,13 @@ const Todo = ({handleLogout}) => {
                 </nav> 
                 <Sidebar />
 
-                {notes.map(note => (
+                {/* {notes.map(note => (
                     <Switch>
                         <Route path={note.id}>
-                            <Content />
+                            <Content titleNotes={note.title}/>
                         </Route>
                     </Switch>
-                ))}
+                ))} */}
 
                 
                
